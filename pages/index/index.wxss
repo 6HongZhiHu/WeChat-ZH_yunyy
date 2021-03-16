@@ -1,0 +1,135 @@
+/* pages/index/index.wxss */
+.navContainer{
+  display: flex;
+  justify-content: space-between;
+
+}
+.navItem{
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  align-items: center;
+  width: 20%;
+}
+.navItem .iconfont{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  text-align: center;
+  background: #521919;
+  color: #fff;
+  font-size: 50rpx;
+  line-height: 100rpx;
+  margin: 20rpx 0;
+}
+
+.navItem text{
+  font-size: 32rpx;
+  font-weight: 400;
+}
+
+/* 轮播图 */
+.banners{
+  width: 100%;
+  height: 300rpx;
+}
+
+.bannerImg{
+  width: 100%;
+  height: 100%;
+}
+
+/* 推荐歌曲 */
+.recommendContainer{
+  padding: 20rpx;
+}
+
+.recommendContainer .header .title{
+  font-size: 32rpx;
+  font-weight: bold;
+  line-height: 80rpx;
+  color: #666;
+}
+
+.recommendContainer .header .more{
+  float: right;
+  border: 1px solid #333;
+  padding: 10rpx 10rpx;
+  border-radius: 32rpx;
+  font-size: 26rpx;
+}
+
+/* 推荐内容区 */
+
+.recommendScroll{
+  display: flex;
+  padding-top: 10rpx;
+  height: 300rpx;
+}
+
+.scrollItem{
+  width: 200rpx;
+  margin-right: 20rpx;
+}
+
+.scrollItem image{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 15rpx;
+}
+
+.scrollItem text{
+  display: block;
+  font-size: 30rpx;
+  /* 单行文本溢出 省略号代替 */
+  /* overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; */
+  /* 多行文本溢出 省略号代替 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical; /*设置对齐模式*/
+  -webkit-line-clamp: 2; /*来限制在一个块元素显示的文本的行数*/
+}
+/* 排行榜 */
+.topList{
+  padding: 20rpx;
+}
+
+.topListSwiper{
+  height: 500rpx;
+}
+
+.swiperItem{
+  width: 96%;
+  background: #fbfbfb;
+}
+
+.swiperItem .title{
+  font-size: 30rpx;
+  line-height: 80rpx;
+}
+.musicItem{
+  display: flex;
+  padding: 15rpx 10rpx;
+}
+.musicItem image{
+  width: 100rpx;
+  height: 100rpx;
+}
+.musicItem .count{
+  width: 100rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+.musicItem .musicName{
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 400rpx;
+}

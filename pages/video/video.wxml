@@ -1,0 +1,67 @@
+<view class="videoContainer">
+  <view class="header">
+    <image src="/static/images/video/video.jpg"></image>
+    <view class="search" bindtap="handleSearch">
+      搜索歌曲
+    </view>
+    <image src="/static/images/logo.png"></image>
+  </view>
+  <!-- 导航 -->
+  <scroll-view 
+    scroll-into-view="{{'scroll'+navId}}"  
+    scroll-x class="navScroll" 
+    enable-flex
+    scroll-with-animation
+  >
+    <view id="{{'scroll'+item.id}}" class="navItem" wx:for="{{videoGroupList}}" wx:key="id">
+      <view data-id="{{item.id}}" class="namwcontent {{navId === item.id ? 'active' : ''}}" bindtap="changeNav" id="{{item.id}}">
+        {{item.name}}
+      </view>
+    </view>
+  </scroll-view>
+  <!-- 视频列表 -->
+  <scroll-view 
+    bindrefresherrefresh="handleRefresh"
+    refresher-enabled
+    scroll-y 
+    refresher-triggered="{{isTriggered}}"
+    bindscrolltolower="handleTolower"
+    class="videoScroll">
+    <view class="videoItem"  wx:for="{{videoList}}" wx:key="id">
+      <video 
+        id="{{item.data.vid}}" 
+        bindplay="handlePlay" 
+        src="{{item.data.urlInfo.url}}"
+        poster="{{item.data.coverUrl}}"
+        class="common"
+        object-fit="fill"
+        wx:if="{{item.data.vid === videoId}}"
+        bindtimeupdate="handleUpdateTime"
+        bindended="handleEnd"  
+      ></video>
+      <image wx:else id="{{item.data.vid}}" bindtap="handlePlay" class="common" src="{{item.data.coverUrl}}"></image>
+      <!-- 测试视频 -->
+      <!-- <video controls bindplay="handlePlay" src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"></video> -->
+      <view class="content">{{item.data.title}}</view>
+      <view class="footer">
+        <image class="avatar" src="{{item.data.creator.avatarUrl}}"></image>
+        <text class="nickName">{{item.data.creator.nickname}}</text>
+        <view class="comments_praised">
+          <text class="item">
+            <text class="iconfont icon-shoucang"></text>
+            <text class="count">{{item.data.praisedCount}}</text>
+          </text>
+          <text class="item">
+            <text class="iconfont icon-pinglun"></text>
+            <text class="count">{{item.data.commentCount}}</text>
+          </text>
+          <button open-type="share" class="item btn">
+            <text class="iconfont icon-jinru"></text>
+          </button>
+        </view>
+      </view>
+
+    
+    </view>
+  </scroll-view>
+</view>

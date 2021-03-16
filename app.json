@@ -1,0 +1,66 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/search/search",
+    "pages/video/video",
+    "pages/pensonal/pensonal",
+    "pages/login/login"  
+  ],
+  "usingComponents": {
+    "van-slider": "@vant/weapp/slider/index",
+    "van-search": "@vant/weapp/search/index",
+    "van-row": "@vant/weapp/row/index",
+    "van-col": "@vant/weapp/col/index"
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#521919",
+    "navigationBarTitleText": "zh-音乐",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#521919",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/static/images/tabs/首页-选中.png",
+        "selectedIconPath": "/static/images/tabs/首页-选中 (2).png"
+      },
+      {
+        "pagePath": "pages/video/video",
+        "text": "视频",
+        "iconPath": "/static/images/tabs/视频.png",
+        "selectedIconPath": "/static/images/tabs/视频 (1).png"
+      },
+      {
+        "pagePath": "pages/pensonal/pensonal",
+        "text": "个人中心",
+        "iconPath": "/static/images/tabs/个人中心.png",
+        "selectedIconPath": "/static/images/tabs/个人中心 (1).png"
+      }
+    ]
+  },
+  "requiredBackgroundModes": [
+    "audid",
+    "location"
+  ],
+  "subPackages": [
+    {
+      "root": "songPackage",
+      "pages":[
+        "pages/songDetail/songDetail",
+        "pages/recommendSongs/recommendSongs"
+      ]
+    },
+    {
+      "root": "otherPackage",
+      "pages": [
+        "pages/other/other"
+      ]
+    }
+  ]
+}

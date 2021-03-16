@@ -1,0 +1,7 @@
+<view class="otherCon">
+  <view>测试使用模板</view>
+  <import src="/template/myTemplate/myTemplate.wxml"></import>
+  <template is="mytmp" data="{{...item}}"></template>
+  <hr/>
+  <button bindtap="handleLogin">获取微信id登录信息</button>
+</view>

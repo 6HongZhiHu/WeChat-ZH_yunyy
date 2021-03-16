@@ -1,0 +1,89 @@
+.hotCon .title{
+  font-size: 32rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 2rpx solid #000;
+  padding-left: 12rpx;
+}
+
+.hotList{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hotItem{
+  width: 50%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  display: flex;
+}
+
+.hotItem .order{
+  margin: 0 12rpx;
+}
+.hotItem .hotImg{
+  display: inline-block;
+  width: 35rpx;
+  height: 20rpx;
+  line-height: 80rpx;
+  margin-left: 10rpx;
+  /* overflow: hidden; */
+}
+.hotImg image{
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover; 
+}
+/* 搜索内容展示 */
+.showSearchCon{
+
+}
+.searchCon{
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 26rpx;
+  border-bottom: 1rpx solid #521919;
+  margin: 0 10rpx;
+}
+.searchItem{
+  border-bottom: 1rpx solid rgb(211, 207, 207);
+}
+.searchItem .con{
+  flex: 1;
+  margin-left: 20rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 32rpx;
+}
+
+/* 历史记录 */
+.history{
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+.history .title{
+  font-size: 28rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.history .historyItem{
+  font-size: 26rpx;
+  background: #ededed;
+  margin-left: 12rpx;
+  border-radius: 20rpx;
+  padding:  0 30rpx;
+  margin-bottom: 15rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.history .icon-shanchu{
+  font-size: 35rpx;
+  position: absolute;
+  bottom: 10rpx;
+  right: 15rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+}

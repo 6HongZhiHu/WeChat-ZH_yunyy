@@ -1,0 +1,154 @@
+/* pages/songDetail/songDetail.wxss */
+.songDetailCon{
+  background: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/*  */
+.yuan{
+  background: #fff;
+  border-radius: 50%;
+  width: 55rpx;
+  height: 55rpx;
+  z-index: 100;
+}
+.needle{
+  z-index: 99;
+  width: 192rpx;
+  height: 274rpx;
+  position: relative;
+  left: 58rpx;
+  top: -34rpx;
+  transform: rotate(-20deg);
+  transform-origin: 40rpx 0 ;
+  transition: transform 1s;
+}
+.songDetailCon .author{
+  font-size: 38rpx;
+  font-weight: 550;
+  margin: 10rpx;
+}
+.needleRoutate{
+  transform: rotate(0deg);
+}
+.discCon{
+  
+  width: 598rpx;
+  height: 598rpx;
+  position: relative;
+  top: -170rpx;
+}
+/* 动画停止 */
+.pause{
+	animation-play-state:paused;
+}
+/* 动画播放 */
+.running{
+  animation-play-state:running;
+}
+.discConAnimationPaused{
+  animation: disc 24s linear infinite;
+  animation-delay: 1s;
+  /* animation-fill-mode: forwards; */
+  animation-play-state:paused;
+}
+.discConAnimationRunning{
+  animation: disc 24s linear infinite;
+  animation-delay: 1s;
+  animation-play-state:running;
+}
+@keyframes disc{
+  from{}
+  to{
+    transform: rotate(360deg);
+  }
+}
+.disc{
+  width: 598rpx;
+  height: 598rpx;
+}
+.musicImg{
+  width: 370rpx;
+  height: 370rpx;
+  border-radius: 50%;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.musicControl{
+  position: absolute;
+  bottom: 40rpx;
+  left: 0rpx;
+  border-top: 2rpx solid #fff;
+  width: 100%;
+  display: flex;
+}
+.musicControl text{
+  width: 20%;
+  font-size: 70rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 120rpx;
+}
+.musicControl .big{
+  font-size: 90rpx;
+}
+/* 进度条 */
+
+.progressControl{
+  position: absolute;
+  width: 640rpx;
+  height: 80rpx;
+  bottom: 200rpx;
+  display: flex;
+  line-height: 80rpx;
+}
+
+.progressControl text{
+  line-height: 80rpx;
+  margin: 5rpx;
+}
+
+.barControl{
+  width: 450rpx;
+  height: 6rpx;
+  background: rgba(0,0,0,0.4);
+  margin: auto;
+  position: relative;
+}
+.audio-Bar{
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* width: 100rpx; */
+  height: 6rpx;
+  background: #bb3737;
+  /* margin: auto; */
+  /* transition:width 1s; */
+}
+/* 小圆球 */
+.xyq{
+  width: 12rpx;
+  height: 12rpx;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  right: -12rpx;
+  /* z-index: 1; */
+  top: -4rpx;
+}
+
+.xyq:hover{
+  cursor:pointer
+}
+
+/* .slider{
+  width: 100%;
+} */

@@ -1,0 +1,50 @@
+<view class="searchCon">
+  <!-- 头部搜索 -->
+  <!-- vant的search组件 -->
+  <van-search 
+    bind:change="handleChange"	
+    value="{{ value }}" 
+    show-action
+    placeholder="{{default}}"  
+    
+    shape="round">
+  </van-search>
+  <!-- 搜索内容展示 -->
+  <block wx:if="{{searchList.length}}">
+    <view class="showSearchCon">
+      <view class="searchCon">搜索内容：{{searchStr}}</view>
+      <view class="searchList">
+        <view class="searchItem" wx:for="{{searchList}}" wx:key="id">
+          <text class="iconfont icon-sousuo1"></text>
+          <text class="con">{{item.name}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+ 
+  <!-- 热搜 -->
+  <block wx:else>
+    <!-- 历史记录 -->
+    <view class="history" wx:if="{{historyArr.length}}">
+      <view class="title">历史</view>
+      <view  class="historyItem" wx:key="item" wx:for="{{historyArr}}">
+        {{item}}
+      </view>
+      <view bindtap="handleDelete" class="iconfont icon-shanchu"></view>
+    </view>
+    <view class="hotCon">
+      <view class="title">热搜榜</view>
+      <view class="hotList">
+        <view wx:key="searchWord" class="hotItem" wx:for="{{HotList}}">
+          <text class="order">{{index+1}}</text>
+          <text>{{item.searchWord}}</text>
+          <view class="hotImg">
+            <image  wx:if="{{item.iconUrl}}" src="{{item.iconUrl}}" ></image>
+          </view>
+          
+        </view>
+      </view>
+    </view>
+  </block>
+  
+</view>

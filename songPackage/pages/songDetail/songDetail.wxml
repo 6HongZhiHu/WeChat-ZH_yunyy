@@ -1,0 +1,44 @@
+<view class="songDetailCon">
+  <view class="author">{{songs[0].ar[0].name}}</view>
+  <view class="yuan"></view>
+  <image class="needle {{isPlay? 'needleRoutate' : ''}}" src="/static/images/song/needle.png"></image>
+
+  <view 
+    id="an" 
+    class="discCon {{isPlay?'discConAnimationRunning':'discConAnimationPaused'}} "
+  >
+    <image class="disc " src="/static/images/song/disc.png"></image>
+    <image class="musicImg" src="{{songs[0].al.picUrl}}"></image>
+  </view>
+
+ 
+
+  <!-- 进度条部分 -->
+  <view class="progressControl" >
+    <text >{{currentTime}}</text>
+    <view class="barControl" bindtap="handelToBar" >
+      <view style="width:{{currentWidth + 'rpx'}}" class="audio-Bar">
+        <view class="xyq" ></view>
+      </view>
+    </view>
+    
+    
+    <text >{{durationTime}}</text>
+  </view>
+  <!-- <view class="slider">
+    <van-slider value="50" bind:change="onChange" />
+  </view> -->
+
+
+
+
+
+  <view class="musicControl">
+    <text class="iconfont icon-suijibofang"></text>
+    <text bindtap="handleSwitch" id="pre" class="iconfont icon-shangyiqu"></text>
+    <text bindtap="handelPlay" class="iconfont {{isPlay?'icon-bofangzhong':'icon-zanting'}} big"></text>
+    <text bindtap="handleSwitch" id="next" class="iconfont icon-xiayiqu"></text>
+    <text class="iconfont icon-bofangliebiao"></text>
+  </view>
+</view>
+
